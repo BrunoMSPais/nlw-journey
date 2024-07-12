@@ -1,35 +1,36 @@
-import { ComponentProps, ReactNode } from "react";
+import { ComponentProps, ReactNode } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const buttonVariants = tv({
-  base: 'flex items-center justify-center gap-2 px-5 py-2 font-medium rounded-lg',
+  base: 'rounded-lg px-5 font-medium flex items-center justify-center gap-2',
+
   variants: {
     variant: {
-      prymary: 'bg-lime-300 text-lime-950 hover:bg-lime-400',
-      secondary: 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700',
+      primary: 'bg-lime-300 text-lime-950 hover:bg-lime-400',
+      secondary: 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700'
     },
+
     size: {
       default: 'py-2',
-      full: 'h-11 w-full'
+      full: 'w-full h-11'
     }
   },
+
   defaultVariants: {
-    variant: 'secondary',
+    variant: 'primary',
     size: 'default'
   }
 })
 
-interface ButtonProps extends ComponentProps<'button'>, VariantProps<typeof buttonVariants>{
+interface ButtonProps
+  extends ComponentProps<'button'>,
+    VariantProps<typeof buttonVariants> {
   children: ReactNode
-  variant: "secondary" | "prymary"
 }
 
-export function Button({ children, variant, size, ...props }: ButtonProps) {
+export function Button({ children, variant, size, ...rest }: ButtonProps) {
   return (
-    <button
-      {...props}
-      className={buttonVariants({ variant, size })}
-    >
+    <button {...rest} className={buttonVariants({ variant, size })}>
       {children}
     </button>
   )
