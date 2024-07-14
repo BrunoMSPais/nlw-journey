@@ -7,15 +7,12 @@ public class JourneyDbContext : DbContext
 {
     public DbSet<Trip> Trips { get; set; }
     public DbSet<Activity> Activities { get; set; }
-    
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite("Data Source=../../../../RiderProjects/nlw3-Journey/src/Journey.Infrastructure/JourneyDatabase.db");
+        optionsBuilder.
+            UseSqlite(
+            "Data Source=C:\\development\\Javascript\\pratica\\rocketseat\\NLW\\NLW-Journey\\back-end\\JourneyDatabase.db"
+            );
     }
-
-    // protected override void OnModelCreating(ModelBuilder modelBuilder)
-    // {
-    //     base.OnModelCreating(modelBuilder);
-    //     modelBuilder.Entity<Activity>().ToTable("Activities");
-    // }
 }

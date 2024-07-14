@@ -1,6 +1,5 @@
 using Journey.Communication.Requests;
 using Journey.Communication.Responses;
-using Journey.Exception;
 using Journey.Exception.ExceptionsBase;
 using Journey.Infrastructure;
 using Journey.Infrastructure.Entities;
@@ -39,7 +38,7 @@ public class RegisterTripUseCase
         var validator = new RegisterTripValidator();
         var result = validator.Validate(request);
         
-        if (result.IsValid == false)
+        if (!result.IsValid)
         {
             var errorMessages = result.Errors.Select(error => error.ErrorMessage).ToList();
             

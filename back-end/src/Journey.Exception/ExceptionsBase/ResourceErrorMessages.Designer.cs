@@ -61,11 +61,47 @@ namespace Journey.Exception.ExceptionsBase {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Activity Not Found.
+        /// </summary>
+        public static string ACTIVITY_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("ACTIVITY_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Date Not Within Travel Period.
+        /// </summary>
+        public static string DATE_NOT_WITHIN_TRAVEL_PERIOD {
+            get {
+                return ResourceManager.GetString("DATE_NOT_WITHIN_TRAVEL_PERIOD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The date of the trip must be later than today..
         /// </summary>
         public static string DATE_TRIP_MUST_BE_LATER_THAN_TODAY {
             get {
                 return ResourceManager.GetString("DATE_TRIP_MUST_BE_LATER_THAN_TODAY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a StartDate must.
+        /// </summary>
+        public static string DATE_TRIP_MUST_BE_LATER_THAN_TODAY1 {
+            get {
+                return ResourceManager.GetString("DATE_TRIP_MUST_BE_LATER_THAN_TODAY1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a must end date.
+        /// </summary>
+        public static string END_DATE {
+            get {
+                return ResourceManager.GetString("END_DATE", resourceCulture);
             }
         }
         
@@ -79,6 +115,15 @@ namespace Journey.Exception.ExceptionsBase {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a EndDate must.
+        /// </summary>
+        public static string END_DATE_TRIP_MUST_BE_LATER_START_DATE1 {
+            get {
+                return ResourceManager.GetString("END_DATE_TRIP_MUST_BE_LATER_START_DATE1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The name cannot be empty..
         /// </summary>
         public static string NAME_EMPTY {
@@ -88,11 +133,29 @@ namespace Journey.Exception.ExceptionsBase {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Name must not be.
+        /// </summary>
+        public static string NAME_EMPTY1 {
+            get {
+                return ResourceManager.GetString("NAME_EMPTY1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a An error occurred while processing the Register Trip request..
         /// </summary>
         public static string REGISTER_TRIP_GENERIC_ERROR_MESSAGE {
             get {
                 return ResourceManager.GetString("REGISTER_TRIP_GENERIC_ERROR_MESSAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Trip Not Found.
+        /// </summary>
+        public static string TRIP_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("TRIP_NOT_FOUND", resourceCulture);
             }
         }
     }

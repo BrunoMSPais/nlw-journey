@@ -1,4 +1,3 @@
-using Journey.Exception;
 using Journey.Exception.ExceptionsBase;
 using Journey.Infrastructure;
 using Microsoft.EntityFrameworkCore;
@@ -13,13 +12,8 @@ public class DeleteTripByIdUseCase
         var trip = dbContext
             .Trips
             .Include(trip => trip.Activities)
-            .FirstOrDefault(trip => trip.Id == id);
-        
-        if (trip is null)
-        {
-            throw new NotFoundException(ResourceErrorMessages.TRIP_NOT_FOUND);
-        }
-
+            .FirstOrDefault(trip => trip.Id == id) ??
+                throw new NotFoundException(ResourceErrorMessages.TRIP_NOT_FOUND);
         dbContext.Trips.Remove(trip);
         dbContext.SaveChanges();
     }

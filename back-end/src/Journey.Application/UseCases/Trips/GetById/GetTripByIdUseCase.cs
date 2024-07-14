@@ -1,6 +1,5 @@
 using Journey.Communication.Enums;
 using Journey.Communication.Responses;
-using Journey.Exception;
 using Journey.Exception.ExceptionsBase;
 using Journey.Infrastructure;
 using Microsoft.EntityFrameworkCore;
@@ -15,13 +14,8 @@ public class GetTripByIdUseCase
         var trip = dbContext
             .Trips
             .Include(trip => trip.Activities)
-            .FirstOrDefault(trip => trip.Id == id);
-        
-        if (trip is null)
-        {
-            throw new NotFoundException(ResourceErrorMessages.TRIP_NOT_FOUND);
-        }
-        
+            .FirstOrDefault(trip => trip.Id == id) ??
+                throw new NotFoundException(ResourceErrorMessages.TRIP_NOT_FOUND);
         return new ResponseTripJson
         {
             Id = trip.Id,

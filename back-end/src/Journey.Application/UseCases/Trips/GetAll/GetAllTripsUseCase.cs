@@ -7,9 +7,9 @@ namespace Journey.Application.UseCases.Trips.GetAll
     {
         public ResponseTripsJson Execute()
         {
-            var dbContext = new JourneyDBContext();
+            var dbContext = new JourneyDbContext();
 
-            var trips = dbContext.Trips.ToList()
+            var trips = dbContext.Trips.ToList();
 
             return new ResponseTripsJson
             {

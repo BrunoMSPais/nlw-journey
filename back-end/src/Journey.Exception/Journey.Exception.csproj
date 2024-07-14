@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <Compile Remove="ResourcesTest.Designer.cs" />
-    <Compile Update="ResourceErrorMessages.Designer.cs">
+    <Compile Update="ExceptionsBase\ResourceErrorMessages.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ResourceErrorMessages.resx</DependentUpon>
@@ -21,8 +21,13 @@
 
   <ItemGroup>
     <EmbeddedResource Remove="ResourcesNovo.resx" />
-    <EmbeddedResource Remove="ResourceErrorMessages.resx" />
-    <Resource Include="ResourceErrorMessages.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ExceptionsBase\ResourceErrorMessages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceErrorMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
