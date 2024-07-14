@@ -1,18 +1,21 @@
-﻿using Journey.Infrastructure.Entities;
+using Journey.Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Journey.Infrastructure
-{
-    public class JourneyDBContext : DbContext
-    {
-        public DbSet<Trip> Trips { get; set; }
+namespace Journey.Infrastructure;
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.
-                UseSqlite(
-                "Data Source=C:\\development\\Javascript\\pratica\\rocketseat\\NLW\\NLW-Journey\\back-end\\JourneyDatabase.db"
-                );
-        }
+public class JourneyDbContext : DbContext
+{
+    public DbSet<Trip> Trips { get; set; }
+    public DbSet<Activity> Activities { get; set; }
+    
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlite("Data Source=../../../../RiderProjects/nlw3-Journey/src/Journey.Infrastructure/JourneyDatabase.db");
     }
+
+    // protected override void OnModelCreating(ModelBuilder modelBuilder)
+    // {
+    //     base.OnModelCreating(modelBuilder);
+    //     modelBuilder.Entity<Activity>().ToTable("Activities");
+    // }
 }
